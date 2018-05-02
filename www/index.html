@@ -1,0 +1,20 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="www/css/main.css" />
+</head>
+	<body>
+		<h1>{{ greet }} </h1>
+		<h2> Where am I? </h2>
+		<p> This is an OAuth demo for Oregon State University's CS496 class. </p>
+		<h2> What does it do? </h2>
+		<p> If you click the button below it will start you on the process of authorizing this web app to access some simple credentials from your gmail account. If you choose to go through with authorization, the app will display your first and last name, the state variable used in the authorization process, and the URL to access your Google Plus account. </p>
+		<h2> What credentials are accessed? </h2>
+		<p>These are email, first and last name, organization info and some similar information. These credentials are under the email scope. </p>
+		<form action="/oauth">
+			<input type="submit" value="Begin OAuth" />
+		</form>
+		{% if uri %}
+		<p>{{ uri }}</p>
+		{% endif %}
+	</body>
+</html>
